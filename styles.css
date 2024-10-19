@@ -66,25 +66,31 @@ body {
 main {
     display: flex;
     flex: 1;
+    flex-direction: row;
+    align-items: center;
 }
 
 .left-section {
     flex: 1;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    margin-top: -50px; /* Adjust this value to move it upwards */
 }
 
 
 .logo {
-    margin-top: 100px;
-    width: 80%;
+    width: 60%; /* Adjust width for better scaling */
+    max-width: 300px; /* Limit the logo size on larger screens */
 }
 
 .right-section {
     flex: 1;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .right-section h2 {
@@ -156,7 +162,7 @@ footer {
     color: #94a3b8;
 }
 
-/* Media query for responsiveness */
+/* Media query for smaller screens (up to 768px) */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -164,6 +170,18 @@ footer {
 
     main {
         flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .left-section {
+        justify-content: center;
+        margin-top: -20px;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 200px;
     }
 
     .right-section {
@@ -172,9 +190,55 @@ footer {
 
     .right-section h2 {
         font-size: 40px;
+        text-align: center;
     }
 
     .right-section p {
         font-size: 18px;
+        text-align: center;
+    }
+
+    .contact {
+        text-align: center;
+    }
+
+    .terms-link {
+        margin-top: 30px;
+    }
+}
+
+/* Media query for even smaller screens (up to 480px) */
+@media screen and (max-width: 480px) {
+    .right-section h2 {
+        font-size: 30px;
+    }
+
+    .right-section p {
+        font-size: 16px;
+    }
+
+    .contact ul li {
+        margin-bottom: 30px;
+    }
+
+    .pgp-key {
+        padding: 3px 8px;
+        font-size: 14px;
+    }
+}
+
+/* Media query for larger screens (above 1200px) */
+@media screen and (min-width: 1200px) {
+    .right-section h2 {
+        font-size: 60px;
+    }
+
+    .right-section p {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 70%;
+        max-width: 400px;
     }
 }
